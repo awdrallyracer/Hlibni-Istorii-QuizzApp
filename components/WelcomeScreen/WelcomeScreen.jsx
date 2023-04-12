@@ -1,15 +1,19 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Alert, Pressable } from "react-native";
+//import QuizzScreen from '../QuizzScreen/QuizScreen.jsx'
 import s from './WelcomeScreen.module.css';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (navigation) => {
     const hlibniIstorii = require('../../assets/hlibni-storii.png');
 
     return (
         <View>
             <Image style={s.image} source={hlibniIstorii}>
             </Image>
-            <Text>Асортимент продукції</Text>
+            <Text style={s.text}>Асортимент продукції</Text>
+            <Pressable style={s.button} onPress={() => Alert.alert('Розпочато')}>
+                <Text style={s.buttonText}>Розпочати</Text>
+            </Pressable>
         </View>
     )
 }

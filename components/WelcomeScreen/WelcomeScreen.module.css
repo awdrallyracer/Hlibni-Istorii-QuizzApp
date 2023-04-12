@@ -1,9 +1,39 @@
 .image {
-    width: 800;
-    height: 800;;
-    /* position: "absolute"; */
-    top: 0;
+    width: 900;
+    height: 900;
+    position: absolute;
+    top: -410;
+    left: -290;
+    right: 0;
+    bottom: 0;
+}
+
+.text {
+    color: #5f4700;
+    text-shadow: 1px 1px 1px black;
+    font-family: Gill Sans;
+    font-style: italic;
+    font-size: 35;
+    top: -90;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.button {
+    background-color: #241900;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    top: 95;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 7px 15px
+}
+
+.buttonText {
+    font-family: Gill Sans;
+    font-size: 40;
+    color: aliceblue;
 }
