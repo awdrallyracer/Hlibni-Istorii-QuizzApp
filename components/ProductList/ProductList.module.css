@@ -1,0 +1,18 @@
+.image{
+    margin-top: 10px;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
+
+.view {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.text{
+    font-size: 22;
+    margin-bottom: 12px;
+}

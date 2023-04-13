@@ -1,21 +1,26 @@
 import React from "react";
-import { View, Image, Text, Alert, Pressable } from "react-native";
-//import QuizzScreen from '../QuizzScreen/QuizScreen.jsx'
+import { Image, Text, Pressable, SafeAreaView } from "react-native";
 import s from './WelcomeScreen.module.css';
+import { useNavigation } from "@react-navigation/native";
+import { hlibniIstorii } from "../../data/images";
 
-const WelcomeScreen = (navigation) => {
-    const hlibniIstorii = require('../../assets/hlibni-storii.png');
-
+const WelcomeScreen = () => {
+    const navigation = useNavigation();
     return (
-        <View>
+        <SafeAreaView>
             <Image style={s.image} source={hlibniIstorii}>
             </Image>
             <Text style={s.text}>Асортимент продукції</Text>
-            <Pressable style={s.button} onPress={() => Alert.alert('Розпочато')}>
+            <Pressable style={s.button} onPress={() => navigation.navigate("Quizz")}>
                 <Text style={s.buttonText}>Розпочати</Text>
             </Pressable>
-        </View>
+            <Pressable style={s.button} onPress={() => navigation.navigate("Products")}>
+                <Text style={s.buttonText}>Асортимент</Text>
+            </Pressable>
+        </SafeAreaView>
     )
 }
+
+//{({ isActive }) => isActive ? s.activeLink : undefined}
 
 export default WelcomeScreen;

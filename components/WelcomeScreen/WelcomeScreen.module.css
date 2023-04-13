@@ -2,8 +2,8 @@
     width: 900;
     height: 900;
     position: absolute;
-    top: -410;
-    left: -290;
+    top: -30;
+    left: -251;
     right: 0;
     bottom: 0;
 }
@@ -14,8 +14,8 @@
     font-family: Gill Sans;
     font-style: italic;
     font-size: 35;
-    top: -90;
-    left: 0;
+    top: 250;
+    left: 35;
     right: 0;
     bottom: 0;
 }
@@ -25,11 +25,12 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
-    top: 95;
+    top: 420;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 7px 15px
+    padding: 4px 12px;
+    margin-bottom: 20px;
 }
 
 .buttonText {
