@@ -1,4 +1,4 @@
-import { cherryBun, vatrushka } from "./images"
+import { cherryBun, vatrushka, jabluko, keks, korica, mak } from "./images"
 
 export default questions = [
     {
@@ -27,7 +27,7 @@ export default questions = [
 
     {
         image: vatrushka,
-        question: "Чи це ватрушка?",
+        question: "Що це за булочка?",
         options: [
             {
                 id: "0",
@@ -50,24 +50,96 @@ export default questions = [
     },
 
     {
-        image: vatrushka,
-        question: "Абрикос чи слива?",
+        image: jabluko,
+        question: "Що це за булочка?",
         options: [
             {
                 id: "0",
                 letter: "A",
-                answer: "Абрикос",
+                answer: "Булочка з корицею",
+            },
+            {
+                id: "1",
+                letter: "Б",
+                answer: "Булочка з вишнею",
+            },
+            {
+                id: "2",
+                letter: "В",
+                answer: "Булочка з яблуком",
+                isTrue: true
+            },
+        ],
+        correctAnswerIndex: 2
+    },
+
+    {
+        image: keks,
+        question: "Це мафін чи кекс?",
+        options: [
+            {
+                id: "0",
+                letter: "A",
+                answer: "Кекс класичний з родзинками",
                 isTrue: true
             },
             {
                 id: "1",
                 letter: "Б",
-                answer: "Слива",
+                answer: "Мафін ванільний",
             },
             {
                 id: "2",
                 letter: "В",
-                answer: "Шоколад",
+                answer: "Мафін ванільний шоколадний",
+            },
+        ],
+        correctAnswerIndex: 0
+    },
+
+    {
+        image: mak,
+        question: "Що це за булочка?",
+        options: [
+            {
+                id: "0",
+                letter: "A",
+                answer: "Булочка з повидлом",
+            },
+            {
+                id: "1",
+                letter: "Б",
+                answer: "Булочка з маком",
+                isTrue: true
+            },
+            {
+                id: "2",
+                letter: "В",
+                answer: "Булочка з вишнею",
+            },
+        ],
+        correctAnswerIndex: 1
+    },
+
+    {
+        image: korica,
+        question: "Що це за булочка?",
+        options: [
+            {
+                id: "0",
+                letter: "A",
+                answer: "Булочка з корицею",
+                isTrue: true
+            },
+            {
+                id: "1",
+                letter: "Б",
+                answer: "Булочка з сиром та зеленню",
+            },
+            {
+                id: "2",
+                letter: "В",
+                answer: "Булочка з вишнею",
             },
         ],
         correctAnswerIndex: 0
