@@ -1,44 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlatList, SafeAreaView, View, Text, Image, Pressable } from 'react-native';
 import questions from "../../data/questions"
 import s from './ProductList.module.css';
 import { useNavigation } from "@react-navigation/native";
+import { background } from "../../data/images";
 
 const ProductList = () => {
 
     const navigation = useNavigation();
 
+    const [buttonWelcomePressed, setButtonWelcomePressed] = useState(false);
+
+    const handlePress = () => {
+        setButtonWelcomePressed(true);
+    };
+
+    useEffect(() => {
+        if (buttonWelcomePressed) {
+            navigation.navigate("WelcomeScreen");
+            setTimeout(() => setButtonWelcomePressed(false), 100);
+        }
+    }, [buttonWelcomePressed, navigation]);
+
+
     const renderItem = ({ item }) => {
         return (
             <SafeAreaView style={s.view} >
-
-                <View>
-                    <Pressable onPress={() => navigation.navigate("WelcomeScreen")}>
-                        <Text> Повернутися на головну</Text>
-                    </Pressable>
-                </View>
-                
                 <Image source={item.image} style={s.image} />
                 <FlatList
                     data={item.options}
                     renderItem={({ item }) => (
-                        <View>
+                        <View style={s.description} >
                             {item.isTrue ? <Text style={s.text} >{item.answer}</Text> : null}
                         </View>
                     )}
                     keyExtractor={(item) => item.id}
                 />
+
             </SafeAreaView>
         );
     };
+
     return (
-        <FlatList
-            data={questions}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => index.toString()}>
+        <SafeAreaView>
+            {/* <Image style={s.background} source={background}></Image> */}
+            <View>
+                <Pressable style={buttonWelcomePressed ? s.buttonActive : s.button} onPress={handlePress}>
+                    <Text style={s.header}> Повернутися на головну</Text>
+                </Pressable>
+            </View>
+            <FlatList
+                data={questions}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}>
 
-        </FlatList>
-
+            </FlatList>
+        </SafeAreaView>
     );
 };
 

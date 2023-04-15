@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen.jsx";
 import QuizzScreen from "./components/Quizz/QuizzScreen.jsx"
-import ResultScreen from "./components/ResultScreen/ResultScreen.jsx";
 import ProductList from "./components/ProductList/ProductList.jsx";
+import ResultScreen from "./components/ResultScreen/ResultScreen.jsx";
 
 const StackNavigator = () => {
     const Stack = createNativeStackNavigator();
