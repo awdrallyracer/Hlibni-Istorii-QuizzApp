@@ -2,7 +2,14 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding: 10px;
+    padding: 3px;
+    background-color:aliceblue;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top:7px;
+    margin-bottom: 7px;
+    box-shadow: 0px 1px 1px #5f9bce;
 }
 
 .question {
@@ -20,14 +27,14 @@
     font-family: Arial;
     margin-bottom: 5px;
     color: aliceblue;
-    box-shadow: 0px 2px 0px black;
+    box-shadow: 0px 1px 0px black;
 }
 
 .choices {
     flex-direction: row;
     margin-top: 10px;
     border-width: 0.5px;
-    border-color: #5f4700;
+    border-color: #5f9bce;
     border-radius: 20px;
     margin-right: 35px;
     margin-left: 35px;
@@ -38,7 +45,7 @@
     background-color: aquamarine;
     margin-top: 10px;
     border-width: 0.5px;
-    border-color: #5f4700;
+    border-color: #5f9bce;
     border-radius: 20px;
     margin-right: 35px;
     margin-left: 35px;
@@ -49,15 +56,16 @@
     background-color: red;
     margin-top: 10px;
     border-width: 0.5px;
-    border-color: #5f4700;
+    border-color: #5f9bce;
     border-radius: 20px;
     margin-right: 35px;
     margin-left: 35px;
 }
 
 .choicesLetter {
+    color: #5f9bce;
     font-family: Arial;
-    border-color: #5f4700;
+    border-color: #5f9bce;
     font-size: 18px;
     font-weight: bold;
     border-width: 1px;
@@ -66,15 +74,17 @@
 }
 
 .choicesText {
+    color: #5f9bce;
     padding: 10px;
     font-size: 18px;
     font-family: Arial;
 }
 
 .timer {
-    font-weight: bold;
-    font-size: 25px;
+    color: #5f9bce;
+    font-size: 20px;
     margin-right: 25px;
+    box-shadow: 0px 1px 0px grey;
 }
 
 .submitButton {
@@ -136,7 +146,9 @@
 }
 
 .mainText {
-    margin-left: 25;
-    margin-right: 25;
+    color: #5f9bce;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 20px;
+    box-shadow: 0px 1px 0px grey;
 }

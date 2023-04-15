@@ -4,7 +4,6 @@ import s from './QuizzScreen.module.css';
 import { useNavigation } from "@react-navigation/native";
 import questions from "../../data/questions"
 import { AntDesign } from '@expo/vector-icons';
-import { background } from "../../data/images";
 
 const QuizzScreen = () => {
 
@@ -96,12 +95,11 @@ const QuizzScreen = () => {
 
   return (
     <SafeAreaView style={s.background2}>
-      {/* <Image style={s.background} source={background}></Image> */}
       <Pressable style={buttonBackPressed ? s.buttonBackActive : s.buttonBack} onPress={() => pressButtonBack()}>
         <Text style={s.textBack}> Повернутися на головну</Text>
       </Pressable>
       <View style={s.view}>
-        <Text style={s.mainText}>Таймер:</Text>
+        <Text style={s.mainText}>Залишилось:</Text>
         <Pressable >
           <Text style={s.timer}>{counter} секунд</Text>
         </Pressable>

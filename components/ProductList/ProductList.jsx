@@ -3,7 +3,6 @@ import { FlatList, SafeAreaView, View, Text, Image, Pressable } from 'react-nati
 import questions from "../../data/questions"
 import s from './ProductList.module.css';
 import { useNavigation } from "@react-navigation/native";
-import { background } from "../../data/images";
 
 const ProductList = () => {
 
@@ -43,7 +42,6 @@ const ProductList = () => {
 
     return (
         <SafeAreaView>
-            {/* <Image style={s.background} source={background}></Image> */}
             <View>
                 <Pressable style={buttonWelcomePressed ? s.buttonActive : s.button} onPress={handlePress}>
                     <Text style={s.header}> Повернутися на головну</Text>
