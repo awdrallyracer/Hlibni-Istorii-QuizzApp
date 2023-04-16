@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image, Text, Pressable, SafeAreaView } from "react-native";
+import { Image, Text, View, Pressable, SafeAreaView } from "react-native";
 import s from './WelcomeScreen.module.css';
 import { useNavigation } from "@react-navigation/native";
 import { hlibniIstorii } from "../../data/images";
@@ -28,15 +28,21 @@ const WelcomeScreen = () => {
 
     return (
         <SafeAreaView>
-            <Image style={s.image} source={hlibniIstorii}>
-            </Image>
-            <Text style={s.text}>Асортимент продукції</Text>
-            <Pressable style={buttonTestPressed ? s.buttonActive : s.button} onPress={pressButtonTest}>
-                <Text style={s.buttonText}>Тест</Text>
-            </Pressable>
-            <Pressable style={buttonProductPressed ? s.buttonActive : s.button} onPress={pressButtonProduct}>
-                <Text style={s.buttonText}>Асортимент</Text>
-            </Pressable>
+            <View style={s.view}>
+                <Image style={s.image} source={hlibniIstorii}>
+                </Image>
+            </View>
+            <View>
+                <Text style={s.text}>Асортимент продукції</Text>
+            </View>
+            <View style={s.buttonView}>
+                <Pressable style={buttonTestPressed ? s.buttonActive : s.button} onPress={pressButtonTest}>
+                    <Text style={s.buttonText}>Тест</Text>
+                </Pressable>
+                <Pressable style={buttonProductPressed ? s.buttonActive : s.button} onPress={pressButtonProduct}>
+                    <Text style={s.buttonText}>Асортимент</Text>
+                </Pressable>
+            </View>
         </SafeAreaView>
     )
 }

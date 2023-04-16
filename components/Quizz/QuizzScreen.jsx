@@ -5,11 +5,12 @@ import { useNavigation } from "@react-navigation/native";
 import questions from "../../data/questions"
 import { AntDesign } from '@expo/vector-icons';
 
+var data = questions.sort(() => Math.random() - 3);
+
 const QuizzScreen = () => {
 
   const navigation = useNavigation();
 
-  const data = questions;
   const totalQuestions = data.length;
 
   const [buttonBackPressed, setButtonBackPressed] = useState(false)
@@ -36,6 +37,7 @@ const QuizzScreen = () => {
     if (buttonBackPressed) {
       navigation.navigate("WelcomeScreen");
       setTimeout(() => setButtonBackPressed(false), 100);
+      data.sort(() => Math.random() - 0.5);
     }
   }, [buttonBackPressed, navigation]);
 
@@ -99,23 +101,17 @@ const QuizzScreen = () => {
         <Text style={s.textBack}> Повернутися на головну</Text>
       </Pressable>
       <View style={s.view}>
-        <Text style={s.mainText}>Залишилось:</Text>
-        <Pressable >
-          <Text style={s.timer}>{counter} секунд</Text>
-        </Pressable>
+        <Text style={s.mainText}> Залишилось: {counter} секунд</Text>
       </View>
-
       <View style={s.view}>
-        <Text style={s.mainText}>Ваш прогрес:</Text>
-        <Text style={s.mainText}>(Відповіді {index}/{totalQuestions})</Text>
+        <Text style={s.mainText}>Ваш прогрес: (Відповіді {index}/{totalQuestions})</Text>
       </View>
-
       <View style={s.question}>
         <Text style={s.questionText}>{currentQuestion?.question}</Text>
         <Image source={currentQuestion?.image} style={s.image} />
       </View>
 
-      <View>
+      <View style={s.background2}>
         {currentQuestion?.options.map((item, index) => (
           <Pressable
             onPress={() => selectedAnswerIndex === null && setSelectedAnswerIndex(index)}
@@ -129,10 +125,10 @@ const QuizzScreen = () => {
 
             {selectedAnswerIndex === index &&
               index === currentQuestion.correctAnswerIndex ? (
-              <AntDesign style={s.choicesLetter} name="check" size={20} color="black" />
+              <AntDesign style={s.choicesLetter} name="check" />
             ) : selectedAnswerIndex != null &&
               selectedAnswerIndex === index ? (
-              <AntDesign style={s.choicesLetter} name="closecircle" size={20} color="black" />
+              <AntDesign style={s.choicesLetter} name="closecircle" />
             ) : (
               <Text style={s.choicesLetter}> {item.letter} </Text>)}
             <Text style={s.choicesText} >{item.answer}</Text>
@@ -140,8 +136,7 @@ const QuizzScreen = () => {
         ))}
       </View>
 
-      <View
-      >
+      <View style={s.background2}>
         {answerStatus === null ? null : (
           <Text
             style={

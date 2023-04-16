@@ -1,35 +1,38 @@
-.image {
-    width: 900;
-    height: 900;
+.view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:350%;
     position: absolute;
-    top: -30;
-    left: -251;
-    right: 0;
-    bottom: 0;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .text {
     color: #5f9bce;
     text-shadow: 0px 1px 1px grey;
     font-family: Gill Sans;
-    font-style: italic;
-    font-size: 35;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25;
     top: 250;
-    left: 35;
-    right: 0;
     bottom: 0;
-    box-shadow: 0px 1px 0px black;
+    box-shadow: 0px 1px 0px gray;
+}
+
+.buttonView {
+    margin-top: 80px;
 }
 
 .button {
     background-color: #5f9bce;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 35;
+    margin-right: 35;
     border-radius: 40px;
-    top: 420;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 450;
     padding: 4px 15px;
     margin-bottom: 20px;
     box-shadow: 0px 1px 0px grey;
@@ -40,13 +43,12 @@
     margin-left: 35px;
     margin-right: 35px;
     border-radius: 40px;
-    top: 420;
+    top: 450;
     left: 0;
     right: 0;
     bottom: 0;
     padding: 4px 15px;
     margin-bottom: 20px;
-
 }
 
 .buttonText {
