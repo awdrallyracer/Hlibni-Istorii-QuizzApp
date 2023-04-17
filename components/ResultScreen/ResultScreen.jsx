@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, SafeAreaView, View, Pressable, FlatList } from "react-native";
+import { Text, SafeAreaView, View, Pressable, FlatList } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -37,14 +37,11 @@ const ResultScreen = () => {
               <AntDesign style={{ marginLeft: 5 }} name="closecircle" size={25} color="red" />
             )}
           </View>
-        )}
-        />
-
+        )} />
         <Pressable style={buttonPressed ? s.submitButtonActive : s.submitButton} onPress={pressButton}>
           <Text style={s.submitText}>Продовжити</Text>
         </Pressable>
       </Pressable>
-
     </SafeAreaView>
   );
 };

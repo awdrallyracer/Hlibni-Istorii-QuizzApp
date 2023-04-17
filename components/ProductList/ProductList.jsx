@@ -33,9 +33,7 @@ const ProductList = () => {
                             {item.isTrue ? <Text style={s.text} >{item.answer}</Text> : null}
                         </View>
                     )}
-                    keyExtractor={(item) => item.id}
-                />
-
+                    keyExtractor={(item) => item.id}/>
             </SafeAreaView>
         );
     };
@@ -51,7 +49,6 @@ const ProductList = () => {
                 data={questions}
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}>
-
             </FlatList>
         </SafeAreaView>
     );
