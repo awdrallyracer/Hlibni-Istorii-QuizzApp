@@ -25,23 +25,21 @@ const ResultScreen = () => {
 
   return (
     <SafeAreaView style={{ margin: 10 }}>
-      <Pressable style={s.frame}>
-        <Text style={s.headerText}> Відповіді </Text>
-        <FlatList numColumns={1} data={route.params.answers} renderItem={({ item, i }) => (
-          <View
-            style={s.results}>
-            <Text style={s.text}>{item.question}</Text>
-            {item.answer === true ? (
-              <AntDesign style={{ marginLeft: 5 }} name="checkcircle" size={25} color="green" />
-            ) : (
-              <AntDesign style={{ marginLeft: 5 }} name="closecircle" size={25} color="red" />
-            )}
-          </View>
-        )} />
-        <Pressable style={buttonPressed ? s.submitButtonActive : s.submitButton} onPress={pressButton}>
-          <Text style={s.submitText}>Продовжити</Text>
-        </Pressable>
+      <Pressable style={buttonPressed ? s.submitButtonActive : s.submitButton} onPress={pressButton}>
+        <Text style={s.submitText}>Продовжити</Text>
       </Pressable>
+      <Text style={s.headerText}> Відповіді </Text>
+      <FlatList numColumns={2} data={route.params.answers} renderItem={({ item, i }) => (
+        <View
+          style={s.results}>
+          <Text style={s.text}>{item.question}</Text>
+          {item.answer === true ? (
+            <AntDesign style={{ marginLeft: 5 }} name="checkcircle" size={25} color="green" />
+          ) : (
+            <AntDesign style={{ marginLeft: 5 }} name="closecircle" size={25} color="red" />
+          )}
+        </View>
+      )} />
     </SafeAreaView>
   );
 };
